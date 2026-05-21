@@ -28,67 +28,54 @@ class Sidebar extends StatelessWidget {
         physics: ClampingScrollPhysics(),
         children: [
           Logo(),
-          SizedBox(height: 50),
-          TextSeparator(text: 'main'),
+          SizedBox(height: 30),
+          TextSeparator(text: 'Menú Principal'),
           MenuItem(
-            text: 'Dashboard',
-            icon: Icons.compass_calibration_outlined,
+            text: 'Inicio',
+            icon: Icons.home_outlined,
             onPressed: () => navigateTo(Flurorouter.dashboardRoute),
           ),
           MenuItem(
-            text: 'Analytic',
-            icon: Icons.show_chart_outlined,
-            onPressed: () => navigateTo(Flurorouter.analyticRoute),
+            text: 'Nosotros',
+            icon: Icons.info_outline,
+            onPressed: () => navigateTo(Flurorouter.nosotrosRoute),
           ),
           MenuItem(
-            text: 'Categories',
-            icon: Icons.layers_clear_outlined,
-            onPressed: () => navigateTo(Flurorouter.categoriesRoute),
+            text: 'Menú',
+            icon: Icons.restaurant_menu_outlined,
+            onPressed: () => navigateTo(Flurorouter.menuRoute),
           ),
           MenuItem(
-            text: 'Products',
-            icon: Icons.dashboard_outlined,
-            onPressed: () => navigateTo(Flurorouter.productsRoute),
+            text: 'Promociones',
+            icon: Icons.local_offer_outlined,
+            onPressed: () => navigateTo(Flurorouter.promocionesRoute),
           ),
           MenuItem(
-            text: 'Discounts',
-            icon: Icons.attach_money_outlined,
-            onPressed: () => navigateTo(Flurorouter.discountsRoute),
+            text: 'Galería',
+            icon: Icons.photo_library_outlined,
+            onPressed: () => navigateTo(Flurorouter.galeriaRoute),
           ),
           MenuItem(
-            text: 'Customers',
-            icon: Icons.people_alt_outlined,
-            onPressed: () => navigateTo(Flurorouter.customersRoute),
+            text: 'Pedidos',
+            icon: Icons.shopping_bag_outlined,
+            onPressed: () => navigateTo(Flurorouter.pedidosRoute),
+          ),
+          MenuItem(
+            text: 'Sucursales',
+            icon: Icons.location_on_outlined,
+            onPressed: () => navigateTo(Flurorouter.sucursalesRoute),
+          ),
+          MenuItem(
+            text: 'Contacto',
+            icon: Icons.contact_mail_outlined,
+            onPressed: () => navigateTo(Flurorouter.contactoRoute),
           ),
           SizedBox(height: 30),
-          TextSeparator(text: 'UI Elements'),
-          MenuItem(
-            text: 'Icons',
-            icon: Icons.list_alt_outlined,
-            onPressed: () => navigateTo(Flurorouter.iconsRoute),
-          ),
-          MenuItem(
-            text: 'Marketing',
-            icon: Icons.mark_email_read_outlined,
-            onPressed: () => navigateTo(Flurorouter.marketingRoute),
-          ),
-          MenuItem(
-            text: 'Campeign',
-            icon: Icons.note_add_outlined,
-            onPressed: () => navigateTo(Flurorouter.campaignRoute),
-          ),
-          // ✅ Correcto
-MenuItem(
-  text: 'Black',
-  icon: Icons.post_add_outlined,
-  onPressed: () => navigateTo(Flurorouter.blackRoute), // <-- así debe ser
-),
           MenuItem(
             text: 'Exit',
             icon: Icons.exit_to_app_outlined,
             onPressed: () {
               authProvider.logout();
-              navigateTo(Flurorouter.loginRoute);
             },
           ),
         ],
@@ -97,8 +84,11 @@ MenuItem(
   }
 
   BoxDecoration buildBoxDecoration() => BoxDecoration(
-        gradient:
-            LinearGradient(colors: [Color(0xff092044), Color(0xff092042)]),
+        gradient: LinearGradient(
+          colors: [Color(0xff1a0000), Color(0xff2d0000)],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
         boxShadow: [BoxShadow(color: Colors.black38, blurRadius: 10)],
       );
 }

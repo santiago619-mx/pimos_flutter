@@ -7,10 +7,8 @@ class Flurorouter {
   static final FluroRouter router = FluroRouter();
 
   static String rootRoute = '/';
-  // auth routes
   static String loginRoute = 'auth/login';
   static String registerRoute = 'auth/register';
-  // dashboard routes
   static String dashboardRoute = '/dashboard';
   static String iconsRoute = '/dashboard/icons';
   static String analyticRoute = '/dashboard/analytic';
@@ -20,7 +18,15 @@ class Flurorouter {
   static String customersRoute = '/dashboard/customers';
   static String marketingRoute = '/dashboard/marketing';
   static String campaignRoute = '/dashboard/campaign';
-static String blackRoute = '/dashboard/black';
+  static String blackRoute = '/dashboard/black';
+  static String nosotrosRoute = '/dashboard/nosotros';
+  static String menuRoute = '/dashboard/menu';
+  static String promocionesRoute = '/dashboard/promociones';
+  static String galeriaRoute = '/dashboard/galeria';
+  static String pedidosRoute = '/dashboard/pedidos';
+  static String sucursalesRoute = '/dashboard/sucursales';
+  static String contactoRoute = '/dashboard/contacto';
+
   static void configRoutes() {
     router.define(rootRoute,
         handler: AdminHandlers.login, transitionType: TransitionType.none);
@@ -32,23 +38,23 @@ static String blackRoute = '/dashboard/black';
         handler: DashboardHandlers.dashboard, transitionType: TransitionType.none);
     router.define(iconsRoute,
         handler: DashboardHandlers.icons, transitionType: TransitionType.none);
-    router.define(analyticRoute,
-        handler: DashboardHandlers.analytic, transitionType: TransitionType.none);
-    router.define(categoriesRoute,
-        handler: DashboardHandlers.categories, transitionType: TransitionType.none);
-    router.define(productsRoute,
-        handler: DashboardHandlers.products, transitionType: TransitionType.none);
-    router.define(discountsRoute,
-        handler: DashboardHandlers.discounts, transitionType: TransitionType.none);
-    router.define(customersRoute,
-        handler: DashboardHandlers.customers, transitionType: TransitionType.none);
-    router.define(marketingRoute,
-        handler: DashboardHandlers.marketing, transitionType: TransitionType.none);
-    router.define(campaignRoute,
-        handler: DashboardHandlers.campaign, transitionType: TransitionType.none);
-router.define(blackRoute,
-    handler: DashboardHandlers.black, transitionType: TransitionType.none);
-    // 404
+    router.define(blackRoute,
+        handler: DashboardHandlers.black, transitionType: TransitionType.none);
+    router.define(nosotrosRoute,
+        handler: DashboardHandlers.nosotros, transitionType: TransitionType.none);
+    router.define(menuRoute,
+        handler: DashboardHandlers.menu, transitionType: TransitionType.none);
+    router.define(promocionesRoute,
+        handler: DashboardHandlers.promociones, transitionType: TransitionType.none);
+    router.define(galeriaRoute,
+        handler: DashboardHandlers.galeria, transitionType: TransitionType.none);
+    router.define(pedidosRoute,
+        handler: DashboardHandlers.pedidos, transitionType: TransitionType.none);
+    router.define(sucursalesRoute,
+        handler: DashboardHandlers.sucursales, transitionType: TransitionType.none);
+    router.define(contactoRoute,
+        handler: DashboardHandlers.contacto, transitionType: TransitionType.none);
+
     router.notFoundHandler = NoPageFoundHandlers.noPageFound;
   }
 }

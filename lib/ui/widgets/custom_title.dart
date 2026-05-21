@@ -9,21 +9,36 @@ class CustomTitle extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(height: 60), // <- agrega esta línea
         Image.asset(
-          'twitter-white-logo.png',
-          width: 50,
-          height: 50,
+          'assets/pimos-logo.png',
+          width: 80,
+          height: 80,
         ),
         SizedBox(height: 20),
         FittedBox(
           fit: BoxFit.contain,
-          child: Text(
-            'Happening Now',
-            style: GoogleFonts.montserratAlternates(
-              fontSize: 40,
-              fontWeight: FontWeight.w600,
-              color: Colors.white
-            )
+          child: RichText(
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: 'Happening ',
+                  style: GoogleFonts.montserratAlternates(
+                    fontSize: 40,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.red,
+                  ),
+                ),
+                TextSpan(
+                  text: 'Now',
+                  style: GoogleFonts.montserratAlternates(
+                    fontSize: 40,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ],

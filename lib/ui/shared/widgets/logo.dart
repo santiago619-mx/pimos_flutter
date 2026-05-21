@@ -8,16 +8,23 @@ class Logo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: 30),
-      child: Row(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.bubble_chart_outlined,color: Colors.blue),
-          SizedBox(width: 10),
-          Text('Admin',style: GoogleFonts.montserratAlternates(
-            fontSize: 20,
-            fontWeight: FontWeight.w200,
-            color: Colors.white
-          ))
+          Image.asset(
+            'assets/pimos-logo.png',
+            width: 80,
+            height: 80,
+          ),
+          SizedBox(height: 10),
+          Text(
+            "Pimo's",
+            style: GoogleFonts.montserratAlternates(
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+              color: Colors.red,
+            ),
+          ),
         ],
       ),
     );

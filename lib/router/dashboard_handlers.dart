@@ -9,7 +9,14 @@ import 'package:e301_login/ui/views/icons_views.dart';
 import 'package:e301_login/ui/views/login_view.dart';
 import 'package:e301_login/ui/views/marketing_view.dart';
 import 'package:e301_login/ui/views/products_view.dart';
-import 'package:e301_login/ui/views/black_view.dart'; // arriba con los imports
+import 'package:e301_login/ui/views/black_view.dart'; 
+import 'package:e301_login/ui/views/nosotros_view.dart';
+import 'package:e301_login/ui/views/menu_view.dart';
+import 'package:e301_login/ui/views/promociones_view.dart';
+import 'package:e301_login/ui/views/galeria_view.dart';
+import 'package:e301_login/ui/views/pedidos_view.dart';
+import 'package:e301_login/ui/views/sucursales_view.dart';
+import 'package:e301_login/ui/views/contacto_view.dart';// arriba con los imports
 import 'package:fluro/fluro.dart';
 import 'package:provider/provider.dart';
 
@@ -116,6 +123,82 @@ static Handler black = Handler(
       final authProvider = Provider.of<AuthProvider>(context!);
       if (authProvider.authStatus == AuthStatus.authenticated) {
         return CampaignView();
+      } else {
+        return LoginView();
+      }
+    },
+  );
+   static Handler nosotros = Handler(
+    handlerFunc: (context, params) {
+      final authProvider = Provider.of<AuthProvider>(context!);
+      if (authProvider.authStatus == AuthStatus.authenticated) {
+        return NosotrosView();
+      } else {
+        return LoginView();
+      }
+    },
+  );
+
+  static Handler menu = Handler(
+    handlerFunc: (context, params) {
+      final authProvider = Provider.of<AuthProvider>(context!);
+      if (authProvider.authStatus == AuthStatus.authenticated) {
+        return MenuView();
+      } else {
+        return LoginView();
+      }
+    },
+  );
+
+  static Handler promociones = Handler(
+    handlerFunc: (context, params) {
+      final authProvider = Provider.of<AuthProvider>(context!);
+      if (authProvider.authStatus == AuthStatus.authenticated) {
+        return PromocionesView();
+      } else {
+        return LoginView();
+      }
+    },
+  );
+
+  static Handler galeria = Handler(
+    handlerFunc: (context, params) {
+      final authProvider = Provider.of<AuthProvider>(context!);
+      if (authProvider.authStatus == AuthStatus.authenticated) {
+        return GaleriaView();
+      } else {
+        return LoginView();
+      }
+    },
+  );
+
+  static Handler pedidos = Handler(
+    handlerFunc: (context, params) {
+      final authProvider = Provider.of<AuthProvider>(context!);
+      if (authProvider.authStatus == AuthStatus.authenticated) {
+        return PedidosView();
+      } else {
+        return LoginView();
+      }
+    },
+  );
+
+  static Handler sucursales = Handler(
+    handlerFunc: (context, params) {
+      final authProvider = Provider.of<AuthProvider>(context!);
+      if (authProvider.authStatus == AuthStatus.authenticated) {
+        return SucursalesView();
+      } else {
+        return LoginView();
+      }
+    },
+  );
+
+  static Handler contacto = Handler(
+    handlerFunc: (context, params) {
+      final authProvider = Provider.of<AuthProvider>(context!);
+      if (authProvider.authStatus == AuthStatus.authenticated) {
+        return ContactoView();
       } else {
         return LoginView();
       }
