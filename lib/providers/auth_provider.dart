@@ -32,15 +32,18 @@ class AuthProvider extends ChangeNotifier {
   Future<bool> isAuthenticated() async {
     final token = LocalStorage.prefs.getString('token');
 
+    await Future.delayed(Duration(milliseconds: 1000));
+
     if (token == null) {
       authStatus = AuthStatus.notAuthenticated;
       notifyListeners();
       return false;
     }
 
-    await Future.delayed(Duration(milliseconds: 1000));
-    authStatus = AuthStatus.authenticated;
+    // Sin backend real, siempre pide login al reiniciar
+    LocalStorage.prefs.remove('token');
+    authStatus = AuthStatus.notAuthenticated;
     notifyListeners();
-    return true;
+    return false;
   }
 }

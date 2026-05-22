@@ -15,7 +15,7 @@ class ProductosView extends StatelessWidget {
             children: [
               Container(
                 width: double.infinity,
-                height: 300,
+                height: 400,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('assets/pimos-bg8.jpg'),
@@ -25,7 +25,7 @@ class ProductosView extends StatelessWidget {
               ),
               Container(
                 width: double.infinity,
-                height: 300,
+                height: 400,
                 color: Colors.black.withAlpha(150),
               ),
               Positioned(

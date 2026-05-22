@@ -23,7 +23,7 @@ class ContactoView extends StatelessWidget {
             children: [
               Container(
                 width: double.infinity,
-                height: 300,
+                height: 400,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('assets/pimos-bg6.jpg'),
@@ -33,7 +33,7 @@ class ContactoView extends StatelessWidget {
               ),
               Container(
                 width: double.infinity,
-                height: 300,
+                height: 400,
                 color: Colors.black.withAlpha(150),
               ),
               Positioned(

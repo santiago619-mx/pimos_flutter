@@ -37,6 +37,7 @@ class _DashboardLayoutState extends State<DashboardLayout>
                 child: Column(
                   children: [
                     Navbar(),
+                    SizedBox(height: 10), // Agrega un espacio entre la Navbar y el contenido
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
