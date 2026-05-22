@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// Se cambió el nombre de ProductsView a ProductosView
 class ProductosView extends StatelessWidget {
   const ProductosView({super.key});
 
@@ -30,7 +29,7 @@ class ProductosView extends StatelessWidget {
               ),
               Positioned(
                 left: 40,
-                top: 80,
+                top: 100,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -90,12 +89,15 @@ class ProductosView extends StatelessWidget {
           // Productos Grid
           Container(
             color: const Color(0xff111111),
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: const Wrap(
-              spacing: 20,
-              runSpacing: 30,
-              alignment: WrapAlignment.center,
-              children: [
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+            child: GridView.count(
+              crossAxisCount: 3,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              crossAxisSpacing: 20,
+              mainAxisSpacing: 20,
+              childAspectRatio: 1.1,
+              children: const [
                 _ProductoCard(
                   image: 'assets/hamburguesas.jpeg',
                   title: 'Hamburguesas',
@@ -139,7 +141,6 @@ class ProductosView extends StatelessWidget {
             child: const Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Extras y Bebidas
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -157,7 +158,6 @@ class ProductosView extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 30),
-                // Salsas
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -207,7 +207,6 @@ class ProductosView extends StatelessWidget {
   }
 }
 
-// Se cambió el nombre de _ProductCard a _ProductoCard
 class _ProductoCard extends StatelessWidget {
   final String image;
   final String title;
@@ -222,7 +221,6 @@ class _ProductoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
       decoration: BoxDecoration(
         color: const Color(0xff1a1a1a),
         borderRadius: BorderRadius.circular(15),
@@ -231,38 +229,35 @@ class _ProductoCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(15)),
-            child: Image.asset(
-              image,
-              width: 200,
-              height: 160,
-              fit: BoxFit.cover,
+          Expanded(
+            flex: 3,
+            child: ClipRRect(
+              borderRadius: const BorderRadius.vertical(top: Radius.circular(15)),
+              child: Image.asset(
+                image,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: GoogleFonts.montserratAlternates(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+          Expanded(
+            flex: 1,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    title,
+                    style: GoogleFonts.montserratAlternates(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 6),
-                Text(
-                  description,
-                  style: const TextStyle(
-                    color: Colors.white60,
-                    fontSize: 12,
-                    height: 1.5,
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],
