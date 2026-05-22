@@ -25,11 +25,11 @@ class Sidebar extends StatelessWidget {
       height: double.infinity,
       decoration: buildBoxDecoration(),
       child: ListView(
-        physics: ClampingScrollPhysics(),
+        physics: const ClampingScrollPhysics(),
         children: [
-          Logo(),
-          SizedBox(height: 30),
-          TextSeparator(text: 'Menú Principal'),
+          const Logo(),
+          const SizedBox(height: 30),
+          const TextSeparator(text: 'Menú Principal'),
           MenuItem(
             text: 'Inicio',
             icon: Icons.home_outlined,
@@ -55,10 +55,11 @@ class Sidebar extends StatelessWidget {
             icon: Icons.photo_library_outlined,
             onPressed: () => navigateTo(Flurorouter.galeriaRoute),
           ),
+          // Botón de Productos actualizado
           MenuItem(
-            text: 'Pedidos',
-            icon: Icons.shopping_bag_outlined,
-            onPressed: () => navigateTo(Flurorouter.pedidosRoute),
+            text: 'Productos',
+            icon: Icons.fastfood_outlined,
+            onPressed: () => navigateTo(Flurorouter.productosRoute),
           ),
           MenuItem(
             text: 'Sucursales',
@@ -70,20 +71,18 @@ class Sidebar extends StatelessWidget {
             icon: Icons.contact_mail_outlined,
             onPressed: () => navigateTo(Flurorouter.contactoRoute),
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           MenuItem(
-            text: 'Exit',
+            text: 'Salir',
             icon: Icons.exit_to_app_outlined,
-            onPressed: () {
-              authProvider.logout();
-            },
+            onPressed: () => authProvider.logout(),
           ),
         ],
       ),
     );
   }
 
-  BoxDecoration buildBoxDecoration() => BoxDecoration(
+  BoxDecoration buildBoxDecoration() => const BoxDecoration(
         gradient: LinearGradient(
           colors: [Color(0xff1a0000), Color(0xff2d0000)],
           begin: Alignment.topCenter,

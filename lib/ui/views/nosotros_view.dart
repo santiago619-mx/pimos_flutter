@@ -17,7 +17,7 @@ class NosotrosView extends StatelessWidget {
                 height: 300,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/pimos-bg5.jpeg'),
+                    image: AssetImage('assets/pimos-bg8.jpeg'),
                     fit: BoxFit.cover,
                   ),
                 ),
