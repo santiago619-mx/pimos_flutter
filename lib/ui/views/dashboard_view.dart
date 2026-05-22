@@ -17,7 +17,7 @@ class DashboardView extends StatelessWidget {
                 height: 400,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/pimos-bg8.jpeg'),
+                    image: AssetImage('assets/pimos-bg8.jpg'),
                     fit: BoxFit.cover,
                   ),
                 ),
