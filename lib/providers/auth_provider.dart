@@ -14,8 +14,8 @@ class AuthProvider extends ChangeNotifier {
   }
 
   login(String email, String password) {
-    this._token = 'hjasd.hjgshjghsaj.kjjhsjkh';
-    LocalStorage.prefs.setString('token', this._token!);
+    _token = 'hjasd.hjgshjghsaj.kjjhsjkh';
+    LocalStorage.prefs.setString('token', _token!);
     authStatus = AuthStatus.authenticated;
     notifyListeners();
     NavigationService.replaceTo(Flurorouter.dashboardRoute);

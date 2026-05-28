@@ -43,12 +43,12 @@ class _MobileBody extends StatelessWidget {
         children: [
           SizedBox(height: 20),
           CustomTitle(),
-          Container(
+          SizedBox(
             width: double.infinity,
             height: 420,
             child: child,
           ),
-          Container(
+          SizedBox(
             width: double.infinity,
             height: 400,
             child: BackgroundImage(),
