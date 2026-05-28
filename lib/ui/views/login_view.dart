@@ -37,8 +37,9 @@ class LoginView extends StatelessWidget {
                     children: [
                       TextFormField(
                         validator: (value) {
-                          if (!EmailValidator.validate(value ?? ''))
+                          if (!EmailValidator.validate(value ?? '')) {
                             return 'Correo Electronico invalido!!';
+                          }
                           return null;
                         },
                         onChanged: (value) => loginFormProvider.email = value,
@@ -74,11 +75,12 @@ class LoginView extends StatelessWidget {
                       CustomOutlinedButton(
                         onPressed: () {
                           final isValid = loginFormProvider.validateForm();
-                          if (isValid)
+                          if (isValid) {
                             authProvider.login(
                               loginFormProvider.email,
                               loginFormProvider.password,
                             );
+                          }
                         },
                         text: 'Ingresar',
                         isFilled: true,

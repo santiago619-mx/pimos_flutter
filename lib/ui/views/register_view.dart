@@ -35,8 +35,9 @@ class RegisterView extends StatelessWidget {
                       TextFormField(
                         onChanged: (value) => registerFormProvider.name = value,
                         validator: (value) {
-                          if (value == null || value.isEmpty)
+                          if (value == null || value.isEmpty) {
                             return 'El nombre es obligatorio';
+                          }
                           return null;
                         },
                         style: TextStyle(color: Colors.white),
@@ -51,8 +52,9 @@ class RegisterView extends StatelessWidget {
                         onChanged: (value) =>
                             registerFormProvider.email = value,
                         validator: (value) {
-                          if (!EmailValidator.validate(value ?? ''))
+                          if (!EmailValidator.validate(value ?? '')) {
                             return 'Correo Electronico invalido!!';
+                          }
                           return null;
                         },
                         style: TextStyle(color: Colors.white),
